@@ -4,7 +4,7 @@ function loadProducts(category) {
     let container = document.getElementById("container-id");
     let productsHtml = '';
     products.filter(elem => !category || elem.category === category).forEach(elem => {
-        let elemHtml = `<div class='card__elem' id='product-${elem.id}'><h2>${elem.name}</h2> <img src='${elem.image}' alt='${elem.name}' /> <p>Стать: ${elem.sex}</p> <h2>Ціна: ${elem.price}</h2> <button onclick='addProductToCart(${elem.id})' class='btn__header'>В корзину</button></div>`;
+        let elemHtml = `<div class='card__elem' id='product-${elem.id}'><h2>${elem.name}</h2> <img class='card__img' src='${elem.image}' alt='${elem.name}' /> <p>Стать: ${elem.sex}</p> <h2>Ціна: ${elem.price}</h2> <button onclick='addProductToCart(${elem.id})' class='btn__buy'>В корзину</button></div>`;
         productsHtml += elemHtml;
     });
     container.innerHTML = productsHtml;
